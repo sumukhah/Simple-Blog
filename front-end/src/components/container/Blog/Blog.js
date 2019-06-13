@@ -7,7 +7,8 @@ import styles from './Blog.css';
 class Blog extends React.Component {
   
   state = {
-    posts:[]
+    posts:[],
+    selectedPost:null,
   };
 
   componentDidMount() {
@@ -19,8 +20,18 @@ class Blog extends React.Component {
   }
 
   render() {
+    
+    const onClickHandler = (body,title) => {
+      console.log(body,title);
+      const jack = this.setState({selectedPost:body})
+    }
+
     const posts = this.state.posts.map((post)=>{
-      return <PostListView title={post.title} body={post.text_box} key={post.id} />
+      return <PostListView title={post.title} 
+        body={post.text_box} key={post.id} 
+        selectedPost={post.text_box===this.state.selectedPost?this.state.selectedPost:null}
+       clicked={() => {onClickHandler(post.text_box,post.title)}}
+      />
     });
 
     return (

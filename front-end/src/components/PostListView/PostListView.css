@@ -1,10 +1,15 @@
 .Post{
   width: 60%;
   height:80px;
-  background-color: burlywood;
+  background-color: rgb(168, 156, 139);
   margin: 10px auto;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
   text-align: 10%;
-  padding: 4%;
+  padding: 1%;
+}
+
+.SelectedPost {
+  padding:1%;
+  text-align: end;
 }

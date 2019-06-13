@@ -1,13 +1,16 @@
 import React from 'react';
 import styles from './PostListView.css'
 
-const PostListView = (props) => {
-  return (
-    <div className="Post">
-        <h5>{props.title}</h5>
-       
-    </div>
-  );
+class PostListView extends React.Component{
+  render(){
+
+    return (
+      <div className="Post" onClick={this.props.clicked}>
+          <h5>{this.props.title}</h5>
+          <p className="SelectedPost">{this.props.selectedPost}</p>
+      </div>
+    );
+  }
 }
 
 export default PostListView;

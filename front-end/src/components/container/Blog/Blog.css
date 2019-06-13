@@ -1,6 +1,7 @@
 .Posts{
   width: 60%;
   height:100%;
+  background-color: azure;
   margin: 20px auto;
   border: 1px solid rgb(202, 202, 202);
   box-shadow: 0 2px 3px #ccc;
