@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import PostListView from '../../PostListView/PostListView';
+import FooterButtons from '../../Footer/FooterButtons';
 import styles from './Blog.css';
 
 class Blog extends React.Component {
@@ -23,7 +24,7 @@ class Blog extends React.Component {
     
     const onClickHandler = (body,title) => {
       console.log(body,title);
-      const jack = this.setState({selectedPost:body})
+      this.setState({selectedPost:body})
     }
 
     const posts = this.state.posts.map((post)=>{
@@ -35,11 +36,13 @@ class Blog extends React.Component {
     });
 
     return (
-      <section className='Posts'>
+      <div className='Posts'>
+
       <div>
         {posts}
       </div>
-      </section>
+      <FooterButtons />
+      </div>
     );
   }
 }
