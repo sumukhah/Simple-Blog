@@ -10,6 +10,7 @@ class Blog extends React.Component {
   state = {
     posts:[],
     selectedPost:null,
+    reRenderHelper:null,
   };
 
   componentDidMount() {
@@ -31,12 +32,20 @@ class Blog extends React.Component {
       this.setState({selectedPost:body})
     }
 
+    const clickDeleteHandler = (id) => {
+      window.alert('Hey are you sure you want to delete')
+      axios.delete(`http://localhost:8000/post/${id}/?format=json`)
+      .then((response) => {console.log('item id delted')})
+     
+      this.setState({state:this.state});
+    }
+
     const posts = this.state.posts.map((post)=>{
       return <PostListView title={post.title} 
         body={post.text_box} key={post.id} 
         selectedPost={post.text_box===this.state.selectedPost?this.state.selectedPost:null}
        clicked={() => {onClickHandler(post.text_box,post.title)}}
-      />
+       DeleteButton={() => {clickDeleteHandler(post.id)}}/>
     });
 
     return (

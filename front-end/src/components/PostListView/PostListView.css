@@ -13,3 +13,11 @@
   padding:1%;
   text-align: end;
 }
+
+.DeleteButton {
+  display: flex;
+  align-items: flex-start;
+  background-color: rgb(226, 175, 175);
+  width: 70px;
+  height: 20px;
+}
