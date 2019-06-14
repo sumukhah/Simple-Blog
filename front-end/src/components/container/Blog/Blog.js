@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import PostListView from '../../PostListView/PostListView';
 import FooterButtons from '../../Footer/FooterButtons';
+import CreatePostForm from '../../CreatePostForm/CreatePostForm';
 import styles from './Blog.css';
 
 class Blog extends React.Component {
@@ -35,13 +36,21 @@ class Blog extends React.Component {
       />
     });
 
-    return (
-      <div className='Posts'>
+    const createForm = () => {
+      console.log('Create from should render');
+    }
 
-      <div>
+    return (
+      <div >
+      <div className='Posts'>
         {posts}
       </div>
-      <FooterButtons />
+      <div className='CreatePost'>
+      <FooterButtons clicked={() => {
+        createForm()
+      }}/>
+      <CreatePostForm />
+      </div>
       </div>
     );
   }

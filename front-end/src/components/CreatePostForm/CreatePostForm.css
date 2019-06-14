@@ -1,0 +1,19 @@
+.TitleBox {
+  width: 40%;
+  padding: 6px 2px;
+  margin: 40px 0;
+  box-sizing: border-box;
+  border: 1px solid rgb(88, 87, 87);
+  background-color:rgb(160, 160, 160);
+}
+.BodyBox {
+  width: 40%;
+  padding: 6px 2px;
+  margin: 4px 3px;
+  box-sizing: border-box;
+  border: 1px solid rgb(88, 87, 87);
+  background-color:rgb(160, 160, 160);
+}
+input[type=text]:focus {
+  background-color:rgb(201, 199, 201);
+}

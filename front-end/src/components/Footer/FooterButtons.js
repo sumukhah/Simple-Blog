@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from './FooterButtons.css'
+import styles from './FooterButtons.css';
 
-const FooterButtons = () => {
+const FooterButtons = (props) => {
   return (
     <div>
-      <button className="CreatePostButton">
+      <button className="CreatePostButton" onClick={props.clicked}>
           Create New Post
       </button>
     </div>
