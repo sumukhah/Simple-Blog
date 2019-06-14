@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 import PostListView from '../../PostListView/PostListView';
-import FooterButtons from '../../Footer/FooterButtons';
 import CreatePostForm from '../../CreatePostForm/CreatePostForm';
 import styles from './Blog.css';
 
@@ -18,6 +17,10 @@ class Blog extends React.Component {
     .then((response) => {
       this.setState({posts:response.data});
       console.log(this.state.posts)
+    })
+    .catch((response) => {
+      window.alert('Server is not Responding!!!')
+      window.alert('Create a post to confirm')
     })
   }
 
@@ -36,19 +39,13 @@ class Blog extends React.Component {
       />
     });
 
-    const createForm = () => {
-      console.log('Create from should render');
-    }
-
     return (
       <div >
       <div className='Posts'>
         {posts}
       </div>
       <div className='CreatePost'>
-      <FooterButtons clicked={() => {
-        createForm()
-      }}/>
+
       <CreatePostForm />
       </div>
       </div>
