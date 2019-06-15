@@ -8,7 +8,7 @@ class PostListView extends React.Component{
       <div className="Post" onClick={this.props.clicked}>
           <h5>{this.props.title}</h5>
           <p className="SelectedPost">{this.props.selectedPost}</p>
-          <button className='DeleteButton' onClick={this.props.DeleteButton}>Delete</button>
+          <button type='submit' className='DeleteButton' onClick={this.props.DeleteButton}>Delete</button>
       </div>
     );
   }

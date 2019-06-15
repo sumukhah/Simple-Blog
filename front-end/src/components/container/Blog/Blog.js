@@ -10,7 +10,7 @@ class Blog extends React.Component {
   state = {
     posts:[],
     selectedPost:null,
-    reRenderHelper:null,
+    deltedPostId:null,
   };
 
   componentDidMount() {
@@ -34,10 +34,9 @@ class Blog extends React.Component {
 
     const clickDeleteHandler = (id) => {
       window.alert('Hey are you sure you want to delete')
+      this.setState({deltedPostId:id})
       axios.delete(`http://localhost:8000/post/${id}/?format=json`)
       .then((response) => {console.log('item id delted')})
-     
-      this.setState({state:this.state});
     }
 
     const posts = this.state.posts.map((post)=>{

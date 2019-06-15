@@ -7,7 +7,7 @@ import styles from './CreatePostForm.css';
 
 class CreatePostForm extends React.Component {
   state = {
-    postObject : {title:'null',text_box:'nussll'}
+    postObject : {title:null,text_box:null}
   }
   render() {
 
